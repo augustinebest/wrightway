@@ -22,7 +22,8 @@ exports.create = (req, res) => {
 }
 
 exports.getCompanies = (req, res) => {
-    return services.getCompanies(req, res)
+    // return services.getCompanies(req, res)
+    res.json({message: 'You want to get the companies'})
 }
 
 exports.getACompany = (req, res) => {
