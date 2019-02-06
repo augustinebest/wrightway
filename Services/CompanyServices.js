@@ -12,7 +12,11 @@ exports.create = (req, res, name) => {
 exports.getCompanies = (req, res) => {
     CompanyRepository.get({}, (err, companies) => {
         if(err) return res.json({message: 'error ocurred in creating the companies', code: 10});
-        res.json({message: companies, code: 200});
+        if(companies.length < 1) {
+            res.json({message: 'There is no company at the moment'})
+        }
+        // res.json({message: companies, code: 200});
+        console.log(companies)
     })
 }
 
