@@ -10,9 +10,9 @@ exports.login = (req, res) => {
         password: request.password
     }
     if(request.idNo == '' || request.idNo == null || request.password == '' || request.password == null) {
-        res.json({message: 'The field(s) are empty', code: 10})
+        return res.json({message: 'The field(s) are empty', code: 10})
     } else {
-        services.login(req, res, admin);
+        return services.login(req, res, admin);
     }
 }
 
@@ -44,7 +44,7 @@ exports.addWorker = (req, res) => {
     }
     try {
         if((request.fullName == '' || request.fullName == null || request.address == '' || request.address == null || request.nationality == '' || request.nationality == null || request.stateOfOrigin == '' || request.stateOfOrigin == null || request.role == '' || request.role == null || request.localGovtArea == '' || request.localGovtArea == null || request.town == '' || request.town == null || request.religion == '' || request.religion == null || request.phoneNumber == '' || request.phoneNumber == null || request.sex == '' || request.sex == null || request.age == '' || request.age == null || request.maritalStatus == '' || request.maritalStatus == null)) {
-            res.json({message: 'The field(s) are empty', code: 10})
+            return res.json({message: 'The field(s) are empty', code: 10})
         } else {
             FactoryWorker.findOne({email: request.email}, (err, result) => {
                 if(err) return res.json({message: 'Error ocurred in finding this email', code: 11});
@@ -52,19 +52,19 @@ exports.addWorker = (req, res) => {
                     return res.json({message: 'This email already exist', code: 12})
                 } else {
                     if(!Validate('email', request.email)) {
-                        res.json({message: 'The email is not valid', code: 13})
+                        return res.json({message: 'The email is not valid', code: 13})
                     } else {
                         if(!Validate('sex', request.sex)) {
-                            res.json({message: 'The gender is not valid', code: 14})
+                            return res.json({message: 'The gender is not valid', code: 14})
                         } else {
                             if(!Validate('phone_number', request.phoneNumber)) {
-                                res.json({message: 'The phone number is not valid', cde: 15})
+                                return res.json({message: 'The phone number is not valid', cde: 15})
                             } else {
                                 if(!Validate('age', request.age)) {
-                                    res.json({message: 'The age is not valid', code: 16})
+                                    return res.json({message: 'The age is not valid', code: 16})
                                 } else {
                                     if(!Validate('fullName', request.fullName)) {
-                                        res.json({message: 'The full name format is invalid', code: 17})
+                                        return res.json({message: 'The full name format is invalid', code: 17})
                                     } else {
                                         cloud.upload(req.file.path).then(result => {
                                             factoryWorker.passport = result.url;
@@ -89,7 +89,7 @@ exports.getAdminForAttendance = (req, res) => {
         const currentDateToBeMarked = new Date;
         return services.getAdminForAttendance(req, res, currentDateToBeMarked);
     } catch(error) {
-        res.json({message: error})
+        return res.json({message: error})
     }
 }
 
@@ -98,7 +98,7 @@ exports.getFactoryWorkers = (req, res) => {
         const compId = req.params.id 
         return services.getFactoryWorkers(req, res, compId);
     } catch(error) {
-        res.json({message: error});
+        return res.json({message: error});
     }
 }
 
@@ -199,7 +199,7 @@ exports.markAttendance = (req, res) => {
             return services.markAttendance(req, res, data);
         }
     } catch(error) {
-        res.json({message: error})
+        return res.json({message: error})
     }
 }
 
@@ -207,7 +207,7 @@ exports.findAWorkerAttendanceInAMonth = (req, res) => {
     try{
         return services.findAWorkerAttendanceInAMonth(req, res)
     } catch(error) {
-        res.json({message: error})
+        return res.json({message: error})
     }
 }
 

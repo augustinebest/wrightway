@@ -24,11 +24,11 @@ exports.login = (req, res, admin) => {
                                 const comp = (company[i]._id);
                                 // res.cookie('token', { httpOnly: true })
                                 // console.log(res)
-                                res.json({ message: 'You have logged in succesfully', code: 200, comp: comp, token: token });
+                                return res.json({ message: 'You have logged in succesfully', code: 200, comp: comp, token: token });
                             }
                         }
                     } else {
-                        console.log('Company does not exist')
+                        return res.json({message: 'Company does not exist'})
                     }
                 })
             }
@@ -91,7 +91,7 @@ exports.getAdminForAttendance = (req, res, currentDate) => {
             }
         })
         if(admins.length > 0) {
-            res.json({count: admins.length, message: admins, code: 200})
+            return res.json({count: admins.length, message: admins, code: 200})
         }
     })
 }
@@ -110,7 +110,7 @@ exports.getFactoryWorkers = (req, res, compId) => {
                 }
             })
             if(factoryWorkers.length > 0) {
-                res.json({count: factoryWorkers.length, message: factoryWorkers, code: 200})
+                return res.json({count: factoryWorkers.length, message: factoryWorkers, code: 200})
             }
         })
     })
@@ -122,7 +122,7 @@ exports.getFactoryWorkersForAttendance = (req, res, currentDate, compId) => {
         FactoryRepository.findById(company.workers, (err, workers) => {
             if(err) return res.json({message: 'Error ocurred in finding the workers at the moment', code: 12});
             if(!workers) {
-                res.json({message: 'There is no worker currently', code: 13})
+                return res.json({message: 'There is no worker currently', code: 13})
             }
             const formattedMonth = functions.formatMonthDate(currentDate);
             const formatDate = {
@@ -138,7 +138,7 @@ exports.getFactoryWorkersForAttendance = (req, res, currentDate, compId) => {
                 }
             })
             if(currentAttendanceList.length > 0) {
-                res.json({message: currentAttendanceList, code: 200})
+                return res.json({message: currentAttendanceList, code: 200})
             } 
         })
     })
@@ -150,7 +150,7 @@ exports.getDriversForAttendance = (req, res, currentDate, compId) => {
         FactoryRepository.findById(company.workers, (err, drivers) => {
             if(err) return res.json({message: 'Error ocurred in finding the drivers at the moment', code: 12});
             if(!drivers) {
-                res.json({message: 'There is no driver currently', code: 13})
+                return res.json({message: 'There is no driver currently', code: 13})
             }
             const formattedMonth = functions.formatMonthDate(currentDate);
             const formatDate = {
@@ -166,7 +166,7 @@ exports.getDriversForAttendance = (req, res, currentDate, compId) => {
                 }
             })
             if(currentAttendanceList.length > 0) {
-                res.json({message: currentAttendanceList, code: 200})
+                return res.json({message: currentAttendanceList, code: 200})
             } 
         })
     })
@@ -178,7 +178,7 @@ exports.getOperatorsForAttendance = (req, res, currentDate, compId) => {
         FactoryRepository.findById(company.workers, (err, operators) => {
             if(err) return res.json({message: 'Error ocurred in finding the operators at the moment', code: 12});
             if(!operators) {
-                res.json({message: 'There is no operator currently', code: 13})
+                return res.json({message: 'There is no operator currently', code: 13})
             }
             const formattedMonth = functions.formatMonthDate(currentDate);
             const formatDate = {
@@ -194,7 +194,7 @@ exports.getOperatorsForAttendance = (req, res, currentDate, compId) => {
                 }
             })
             if(currentAttendanceList.length > 0) {
-                res.json({message: currentAttendanceList, code: 200})
+                return res.json({message: currentAttendanceList, code: 200})
             } 
         })
     })
@@ -218,7 +218,7 @@ exports.getDrivers = (req, res, compId) => {
                 }
             })
             if(drive.length > 0) {
-                res.json({count: drive.length, message: drive, code: 200})
+                return res.json({count: drive.length, message: drive, code: 200})
             }
         })
     })
@@ -252,7 +252,7 @@ exports.getAworker = (req, res, worker) => {
         if(!work) {
             return res.json({message: 'This worker does not exist', code: 12})
         }
-        res.json({message: work, code: 200})
+        return res.json({message: work, code: 200})
     })
 }
 
@@ -264,7 +264,7 @@ exports.ascribeSalary = (req, res, data) => {
         }
         worker.salary = data.newSalary;
         worker.save()
-        res.json({message: 'This worker salary have been updated successfully', code: 200});
+        return res.json({message: 'This worker salary have been updated successfully', code: 200});
     })
 }
 

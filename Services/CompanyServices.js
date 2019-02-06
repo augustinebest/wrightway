@@ -13,7 +13,7 @@ exports.getCompanies = (req, res) => {
     CompanyRepository.get({}, (err, companies) => {
         if(err) return res.json({message: 'error ocurred in creating the companies', code: 10});
         if(companies.length < 1) {
-            res.json({message: 'There is no company at the moment'})
+            return res.json({message: 'There is no company at the moment'})
         } else {
             return res.json({message: companies, code: 200});
         }
@@ -26,7 +26,6 @@ exports.getACompany = (req, res, id) => {
         if(!company) {
             return res.json({message: 'This does not exist', code: 11});
         }
-        console.log(company);
         return res.json({message: company, code: 200});
     })
 }
