@@ -26,26 +26,34 @@ const superAdminRoutes = require('./routes/superAdmin');
 
 //Connecting to the local database
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost:27017/Wrightway', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost:27017/Wrightway', { useNewUrlParser: true }); 
 
 // Connection to mlab
-mongoose.connect('mongodb://wrightway:wrightway54@ds035633.mlab.com:35633/wrightway', { useNewUrlParser: true })
+// mongoose.connect('mongodb://wrightway:wrightway54@ds035633.mlab.com:35633/wrightway', { useNewUrlParser: true })
 
 //Middleware
 app.use(morgan('dev'));
 app.use(bodyparser.urlencoded({extended: false}));
 app.use(cookieParser());
-app.use(express.static(__dirname + '/client'));
 app.use(bodyparser.json());
 
 app.use(express.static(path.join(__dirname, "client", "build")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+// });
 
 app.get('/', function(req, res) {
     res.json({message: 'This is my backend!'});
+})
+
+app.get('/users', function(req, res) {
+    res.json([
+        {name: 'Matthew', age: 12, course: 'EEE'},
+        {name: 'Bayo', age: 12, course: 'EEE'},
+        {name: 'Jude', age: 12, course: 'EEE'},
+        {name: 'Kelvin', age: 12, course: 'EEE'}
+    ])
 })
 
 // Using routes
