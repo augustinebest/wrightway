@@ -1,0 +1,27 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  outline: none;
+}
+
+.main {
+  /* margin-top: 10px; */
+  margin-left: 260px;
+  margin-right: 10px;
+  /* border: 1px solid #f00; */
+  padding: 15px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,317 @@
+.navigations {
+    color: #fff;
+    background-color: rgb(0,30,74);
+    border: 1px solid rgb(0,30,74);
+    padding: 5px;
+    font-size: 11px;
+    margin-bottom: 12px;
+    width: 100%;
+    font-weight: bolder;
+}
+
+.myjumbotron {
+    box-shadow: -8px 12px 14px #eee;
+    position: relative;
+    padding: 20px;
+    background-color: #f5f8fa;
+    box-shadow: 14px 8px 15px #eee;
+}
+
+.box1, .box2, .box3 {
+    height: auto;
+    padding: 4px;
+    position: relative;
+}
+
+.grid-1, .grid-2, .grid-3 {
+    text-align: center;
+    width: 90%;
+    height: auto;
+    background-color:  #fff;
+    color: rgb(0,30,74);
+    box-shadow: -8px 12px 14px #eee;
+    padding: 2px;
+}
+
+.company__display {
+    padding: 10px;
+    border: 2px solid rgb(0,30,74);
+    background-color: rgb(0,30,74);
+    color: #fff;
+    margin-bottom: 30px;
+    cursor: pointer;
+    width: 250px;
+}
+
+.company__list {
+    padding: 7px;
+    width: 170px;
+}
+
+.company__list li {
+    color: rgb(0,30,74);
+    background-color: #fff;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid rgb(0,30,74);
+}
+
+.company__list li:hover {
+    background-color: #eee;
+    color: rgb(0,30,74);
+    border: 1px solid rgb(0,30,74);
+}
+
+/* Applications */
+
+.emp__base {
+    width: 100%;
+    height: auto;
+    background-color: #f5f8fa;
+    /* border: 1px solid #f00; */
+}
+
+.box_div {
+    padding: 10px;
+}
+
+.block__form {
+    /* border: 1px solid #f00; */
+    padding: 10px;
+    box-shadow: -1px 4px 10px rgb(134, 119, 119);
+    background-color: #fff;
+}
+
+.button_upload1 {
+    border: 1px solid rgb(5, 58, 138);
+    color: rgb(5, 58, 138);
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 130px;
+    cursor: pointer;
+}
+
+.button_upload1:hover {
+    background-color: rgb(5, 58, 138);
+    color: #fff;
+}
+
+.button_upload {
+    border: 1px solid rgb(5, 58, 138);
+    color: rgb(5, 58, 138);
+    background-color: #fff;
+    transition: 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.button_upload:hover {
+    background-color: rgb(5, 58, 138);
+    color: #fff;
+}
+
+.emp__base input[type=text], .emp__base input[type=email] {
+    width: 100%;
+    margin: 3px 0px 20px 0px;
+    border-top: none; 
+    border-left: none; 
+    border-right: none; 
+    border-bottom: solid 1px rgb(5, 58, 138);
+    transition: 0.2s;
+    background-color: #fff;
+    transition: 0.2s ease-out;
+}
+
+.emp__base input[type=text]:focus, .emp__base input[type=email]:focus {
+    border-bottom: solid 2px rgb(0,30,74);
+}
+
+.emp__base .stage {
+    font-size: 14px;
+    margin-bottom: 4px; 
+    width: 100%;
+    padding: 4px;
+    background-color: #eee;
+    border-radius: 2px;
+}
+.emp__base .labels {
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+/* All workers */
+.emp__base_workers {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+
+.categories, ul {
+    
+}
+
+.categories li {
+    border: 1px solid rgb(0,30,74);
+    padding: 2px 5px;
+    max-width: 180px;
+    list-style: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.categories li:hover {
+    background-color: rgb(0,30,74);
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+}
+
+.active {
+    background-color: rgb(0,30,74);
+    color: #fff;
+    font-weight:  bolder;
+}
+
+/* Profile Page */
+.profile_page {
+    /* border: 1px solid #f00; */
+    margin: 0;
+    padding: 0;
+}
+
+.block__profile {
+    /* border: 1px solid #00f; */
+    width: 100%;
+    padding: 22px 12px;
+}
+
+.fields {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid rgb(0,30,74);
+    padding: 4px;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    cursor: not-allowed;
+}
+
+.salary__base {
+    width: 250px;
+    border: 1px solid rgb(0,30,74);
+}
+
+.salary__header {
+    width: 100%;
+    height: 30px;
+    color: #fff;
+    font-weight: bolder;
+    background-color: rgb(0,30,74);
+    padding-top: 5px;
+}
+
+.salary__body {
+    width: 100%;
+    height: 30px;
+    padding-top: 4px;
+}
+
+.profile__options {
+    width: 250px;
+    border: 1px solid rgb(0,30,74);
+    margin: 0;
+    padding: 0px;
+}
+
+.profile__options li {
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding: 8px;
+    color: #fff;
+    background-color: rgb(0,30,74);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.profile__options li:hover {
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+/* Attendane Component */
+.attendance_base {
+    border: 1px solid rgb(0,30,74);
+    padding: 5px;
+}
+
+.attendance_base .attendance_title {
+    font-weight: bolder;
+    margin: 0;
+    color: #fff;
+    background-color: rgb(0,30,74);
+    padding: 8px;
+}
+
+.left_base {
+    border: 1px solid rgb(0,30,74);
+    width: 80%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.left_base ul li {
+    list-style: none;
+    background-color: rgb(0,30,74);
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+    margin-bottom: 1px;
+}
+
+.left_base ul li:hover {
+    font-weight: bolder;
+    background-color: #eee;
+    color: rgb(0,30,74);
+}
+
+.left_base .activeOne {
+    background-color: #fff;
+    color: rgb(0,30,74);
+    font-weight: bolder;
+}
+
+.attendance_base .absent {
+    border: 1px solid rgb(211, 31, 31);
+    color: #fff;
+    background-color: rgb(211, 31, 31);
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.attendance_base .absent:hover {
+    background-color: rgb(105, 10, 10);
+}
+
+.attendance_base .present {
+    border: 1px solid rgb(20, 158, 20);
+    color: #fff;
+    background-color: rgb(20, 158, 20);
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.attendance_base .present:hover {
+    background-color: rgb(11, 80, 11);
+}

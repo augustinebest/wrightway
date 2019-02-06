@@ -1,0 +1,134 @@
+
+
+
+.login {background-color: rgb(0,30,74); width: 100%; height: 100%;}
+
+.site-tab {background-color: rgb(242,242,242); padding: 20px 20px; }
+
+
+.login-card {width: 300px; height: auto; padding: 20px; background-color: #fff; float: right;}
+.login-input {width: 100%; height: auto; padding: 5px 10px; border-top: none; border-left: none; border-right: none; border-bottom: dashed 1px #000;}
+.login-btn {padding: 3px 10px; color: #fff; background-color: rgb(0,86,128); float: left; border:none; font-size: 12px;}
+.login-header {padding: 20px 40px; font-size: 18px; color: #fff;}
+.login-footer {padding: 20px 40px; font-size: 11px; color: #fff;}
+.side-bar {background-color: #eee; width: 250px; height: 100vh ; box-shadow: 7px 0px 10px 0px rgba(0,0,0,0.3); position: fixed; z-index: 999; top: 0 } 
+
+.logo-div {width: 100%; padding: 10px; height: 200px; background-color: rgb(0,30,74);}
+.drop {border-bottom: solid 1px rgb(0,30,74); font-weight: bolder;}
+.drop:hover {color: #eee; background-color: rgb(0,30,74); padding: 0px 5px;}
+.drop-sub > .dropActive:hover {color: #eee; background-color: rgb(0,30,74); padding: 0px 5px; }
+.side-barActive {color: #eee; background-color: rgb(0,30,74); padding: 0px 5px; }
+div.side-bar > div div {border-bottom: solid 1px #000;}
+
+.card {width: 100%; height: auto; border: solid 2px rgb(0,30,74); margin: 0px; padding: 0px; border-radius: 5px;}
+.card-head {width: 100%; padding: 5px; background-color: rgb(0,30,74); font-size: 12px; color: #fff; }
+.card-body {width: 100%; padding: 20px 10px;}
+.pad-20 {padding: 20px;}
+.font-10 {font-size: 10px;}
+.site-border { border:solid 2px rgb(0,30,74); border-radius:5px; }
+.site-color {color: rgb(0,30,74); }
+.drop {text-decoration: none; margin-top: 10px; cursor: pointer; display: block}
+.drop:hover {text-decoration: none; }
+.drop-sub {margin:5px 0px 5px 10px; font-size: 12px; cursor: pointer; display: block;}
+.side-bar-bottom {position: absolute; bottom: 10px; font-size: 12px;}
+.search {width: 0px; visibility: hidden; border:solid 2px rgb(0,30,74); border-radius: 100px; color: rgb(0,30,74); font-weight: bold; font-size: 14px; outline: none; transition: 0.3s;}
+.search-txt {transition: 0.3s;}
+.m-search {width: 100%; height: auto; padding: 20px; background-color: rgba(210,210,210,0.5); display: none; }
+.mobile-search {border:solid 2px rgb(0,30,74); border-radius: 5px; color: rgb(0,30,74); font-weight: bold; font-size: 14px; outline: none; padding: 4px 10px; width: 100%;}
+.drop-but {outline: none}
+.menu {
+	float:right;
+	margin-top: 10px;
+}
+
+.menu > li > a { color: rgb(0,30,74); }
+
+.menu > li {
+	text-decoration: none;
+	list-style: none;
+	float: left;
+}
+
+.notification-count {
+	background-color:#D60C0A;
+	border-radius:100px;
+	height:20px;
+	width:20px;
+	text-align:center;
+	position: relative;
+	top:-5px;
+	left: -5px;
+	color:#fff;
+	padding:2px 4px;
+	font-size: 10px;
+}
+
+@media screen and (min-width:1024px) {
+
+   .mobile-side-bar {display: none;}
+   .desktop-side-bar {display: block; z-index: 999;}
+   .cont {padding-left: 265px; padding-right: 20px;}
+   .menu > li > a {font-size: 16px;}
+   .header {background-color: #fff;  padding: 0px 50px; width: 100%; height: 50px; border-bottom: solid 2px rgb(0,79,117); text-align: right; color: rgb(0,30,74) !important; font-size: 18px;}
+   .drop-but {display: none;}
+   .menu > li {padding: 0px 10px;}
+
+}
+
+@media only screen and (max-width:1024px) {
+
+    .mobile-side-bar {display: none;}
+    .desktop-side-bar {display: block;}
+    .cont {padding-left: 265px; padding-right: 20px; z-index: 999;}
+    .menu > li > a {font-size: 16px;}
+    .header {background-color: #fff;  padding: 0px 50px; width: 100%; height: 50px; border-bottom: solid 2px rgb(0,79,117); text-align: right; color: rgb(0,30,74) !important; font-size: 18px;}
+    .drop-but {display: none;}
+    .menu > li {padding: 0px 10px;}
+}
+
+@media only screen and (max-width:950px) {
+
+    .mobile-side-bar {display: none;}
+    .desktop-side-bar {display: block;}
+    .cont {padding-left: 265px; padding-right: 20px;}
+    .menu > li > a {font-size: 16px;}
+    .header {background-color: #fff;  padding: 0px 50px; width: 100%; height: 50px; border-bottom: solid 2px rgb(0,79,117); text-align: right; color: rgb(0,30,74) !important; font-size: 18px;}
+    .drop-but {display: none;}
+    .menu > li {padding: 0px 10px;}
+
+}
+
+@media only screen and (max-width:650px) {
+
+    .mobile-side-bar {display: none;}
+    .desktop-side-bar {display: block;}
+    .cont {padding-left: 265px; padding-right: 20px;}
+    .menu > li > a {font-size: 16px;}
+    .header {background-color: #fff;  padding: 0px 50px; width: 100%; height: 50px; border-bottom: solid 2px rgb(0,79,117); text-align: right; color: rgb(0,30,74) !important; font-size: 18px;}
+    .drop-but {display: none;}
+    .menu > li {padding: 0px 10px;}
+
+}
+
+@media only screen and (max-width:480px) {
+
+     .mobile-side-bar {display: none;}
+     .desktop-side-bar {display: none;}
+     .cont {padding-left: 20px; padding-right: 20px;}
+     .menu > li > a {font-size: 13px;}
+     .header {background-color: #fff;  padding: 0px 0px; width: 100%; height: 50px; border-bottom: solid 2px rgb(0,79,117); text-align: right; color: rgb(0,30,74) !important; font-size: 18px;}
+     .drop-but {display: block;}
+     .menu > li {padding: 0px 7px;}
+
+}
+
+@media only screen and (max-width:300px) {
+
+     .mobile-side-bar {display: none;}
+     .desktop-side-bar {display: none;}
+     .cont {padding-left: 20px; padding-right: 20px;}
+     .menu > li > a {font-size: 13px;}
+     .header {background-color: #fff;  padding: 0px 0px; width: 100%; height: 50px; border-bottom: solid 2px rgb(0,79,117); text-align: right; color: rgb(0,30,74) !important; font-size: 18px;}
+     .drop-but {display: block;}
+     .menu > li {padding: 0px 7px;}
+}
