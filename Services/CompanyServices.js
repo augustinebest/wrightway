@@ -14,9 +14,10 @@ exports.getCompanies = (req, res) => {
         if(err) return res.json({message: 'error ocurred in creating the companies', code: 10});
         if(companies.length < 1) {
             res.json({message: 'There is no company at the moment'})
+        } else {
+            console.log(companies.length);
+            return res.json({message: companies, code: 200});
         }
-        // res.json({message: companies, code: 200});
-        console.log(companies)
     })
 }
 
