@@ -17,7 +17,7 @@ class Sidedrawer extends Component {
     return (
       <Fragment>
             <nav className={drawerClasses}>
-            <div className='box'></div><br  /><br />
+            <div className='box-mobile'></div><br  />
             <ul style={{margin: '0px', padding: '0px 0px 0px 5px'}}>
                 <NavLink to='/dashboard'><li className='sub-drop actives' ><i className='fa fa-clock-o'></i> Dashboard</li></NavLink>
                 <NavLink to='/dashboard/applications'><li className='sub-drop'><i className='fa fa-id-card-o'></i> Employee's Application</li></NavLink>
