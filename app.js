@@ -41,9 +41,9 @@ app.use(express.static(__dirname + '/client/build/index.html'));
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.static(__dirname+'/client/public'));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-// });
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client/build/index.html"));
+});
 
 app.get('/', function(req, res) {
     res.json({message: 'This is my backend!'});
