@@ -10,6 +10,7 @@ import AllWorkers from './Components/Layouts/AllWorkers';
 import Costs from './Components/Layouts/Costs';
 import ProfilePage from './Components/Layouts/ProfilePage';
 import SetSalary from './Components/Layouts/SubLayout/SetSalary';
+import AttendanceOverview from './Components/Layouts/SubLayout/AttendanceOverview';
 import Errror from './Components/Error';
 
 const Router = () => {
@@ -27,6 +28,7 @@ const Router = () => {
                     <Route path='/dashboard/costs' exact strict component={Costs} />
                     <Route path='/dashboard/:id/profile' exact strict component={ProfilePage} />
                     <Route path='/dashboard/:id/profile/set-salary' exact strict component={SetSalary} />
+                    <Route path='/dashboard/:id/profile/attendance-overview' exact strict component={AttendanceOverview} />
                     <Route path='/dashboard/:id/profile/debit' exact strict component={Errror} />
                     <Route path='/dashboard/:id/profile/credit' exact strict component={Errror} />
                     <Route path='/dashboard/:id/profile/role' exact strict component={Errror} />

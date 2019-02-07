@@ -54,7 +54,7 @@ class ProfilePage extends Component {
                         <NavLink to={`/dashboard/${userId}/profile/debit`}><li>Debit Worker</li></NavLink>
                         <NavLink to={`/dashboard/${userId}/profile/credit`}><li>Credit worker</li></NavLink>
                         <NavLink to={`/dashboard/${userId}/profile/role`}><li>Change Role</li></NavLink>
-                        <NavLink to={`/dashboard/${userId}/profile/net-salary`}><li>Accumulated salary</li></NavLink>
+                        <NavLink to={`/dashboard/${userId}/profile/attendance-overview`}><li>Accumulated salary</li></NavLink>
                     </ul>
                     </center>
                 </div>

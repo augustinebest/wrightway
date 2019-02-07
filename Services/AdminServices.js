@@ -370,6 +370,25 @@ exports.markAttendance = (req, res, worker) => {
     })
 }
 
-exports.findAWorkerAttendanceInAMonth = (req, res) => {
-    console.log('yayay')
+exports.findAWorkerAttendanceInAMonth = (req, res, date, id) => {
+    FactoryRepository.getByIdNo(id, (err, worker) => {
+        if(err) return res.json({message: 'Error ocurred in finding this worker', code: 10});
+        if(!worker) {
+            return res.json({message: 'This worker does not exist', code: 11});
+        }
+        AttendanceRepository.findById(worker.attendanceTable, (err, attendance) => {
+            if(err) return res.json({message: 'Error ocurred in getting the attendance', code: 12});
+            if(attendance.length < 1) {
+                return res.json({message: 'There is no attendance for this worker currently', code: 13});
+            }
+            var p = attendance.filter(element => {
+                return element.date.includes(date);
+            })
+            if(p.length < 1) {
+                return res.json({message: 'There is no attendance for this period'})
+            } else {
+                return res.json({message: p, code: 200})
+            }
+        })
+    })
 }

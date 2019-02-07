@@ -19,10 +19,6 @@
     width: 100%;
 }
 
-.content {
-    
-}
-
 .main1 {
     width: 85%;
     height: 400px;;
@@ -57,4 +53,36 @@
     background-color: rgb(131, 12, 12);
     color: #fff;
     font-weight: bolder;
+}
+
+/* Attendance Overview */
+.select {
+    /* border: 1px solid #f00; */
+    margin-bottom: 20px;
+    background-color: #f5f8fa;
+    padding: 20px;
+}
+
+.select select {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.select button {
+    background-color: rgb(131, 12, 12);
+    color: #fff;
+    border: none;
+    font-size: 12px;
+    padding: 3px 5px;
+    border-radius: 4px;
+    transition: 0.2s;
+}
+
+.select button:hover {
+    background-color: rgb(0,30,74);
+}
+
+.display__section {
+    /* border: 1px solid #f00; */
+    background-color: #f5f8fa;
 }

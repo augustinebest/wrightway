@@ -37,7 +37,7 @@ app.use(bodyparser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(bodyparser.json());
 
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/client/build/index.html'));
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(express.static(__dirname+'/client/public'));
 
@@ -63,19 +63,19 @@ app.use('/company', companyRoutes);
 app.use('/admin', adminRoutes);
 app.use('/superAdmin', superAdminRoutes);
 
-app.use((req, res, next) => {
-    const error = new Error('Not Found');
-    error.status = 404;
-    next(error);
-})
+// app.use((req, res, next) => {
+//     const error = new Error('Not Found');
+//     error.status = 404;
+//     next(error);
+// })
 
-app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-        error: {
-            message: error.message
-        }
-    });
-})
+// app.use((error, req, res, next) => {
+//     res.status(error.status || 500);
+//     res.json({
+//         error: {
+//             message: error.message
+//         }
+//     });
+// })
 
 module.exports = app;

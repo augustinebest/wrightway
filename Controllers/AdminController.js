@@ -205,12 +205,14 @@ exports.markAttendance = (req, res) => {
 
 exports.findAWorkerAttendanceInAMonth = (req, res) => {
     try{
-        return services.findAWorkerAttendanceInAMonth(req, res)
+        const id = req.params.id;
+        const date = req.body.date;
+        if(date == null || date == '') {
+            return res.json({message: 'The preferred date is required', code: 10})
+        } else {
+            return services.findAWorkerAttendanceInAMonth(req, res, date, id)
+        }
     } catch(error) {
         return res.json({message: error})
     }
 }
-
-// exports.doNothing = (req, res) => {
-
-// }
