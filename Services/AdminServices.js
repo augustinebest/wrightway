@@ -3,6 +3,8 @@ const FactoryRepository = require('../Repositories/FactoryWorkerRepository');
 const CompanyRepository = require('../Repositories/CompanyRepository');
 const functions = require('../Factories/functions');
 const AttendanceRepository = require('../Repositories/AttendanceRepository');
+const ExpensesRepository = require('../Repositories/ExpensesRepository');
+const SalesRepository = require('../Repositories/SalesRepository');
 
 exports.login = (req, res, admin) => {
     AdminRepository.getByIdNo(admin.idNo, (err, work) => {
@@ -391,4 +393,84 @@ exports.findAWorkerAttendanceInAMonth = (req, res, date, id) => {
             }
         })
     })
+}
+
+exports.makeExpenses = (req, res, data, compId) => {
+    CompanyRepository.getById(compId, (err, company) => {
+        if(err) return res.json({message: 'Error ocurred in getting this company', code: 12});
+        if(!company) {
+            return res.json({message: 'This company does not exist', code: 13});
+        }
+        AdminRepository.getByIdNo(data.person, (err, admin) => {
+            if(err) return res.json({message: 'Error ocurred in getting this Admin', code: 12});
+            if(!admin) {
+                return res.json({message: 'This Admin does not exist', code: 13});
+            }
+            data.person = admin.fullName;
+            const formattedMonth = functions.formatMonthDate(data.date);
+            const formatDate = {
+                day: data.date.getUTCDate(),
+                year: data.date.getUTCFullYear(),
+                hour: data.date.getUTCHours(),
+                minutes: data.date.getUTCMinutes()
+            }
+            const ampm = formatDate.hour >= 12 ? 'pm' : 'am';
+            formatDate.hour = formatDate.hour % 12;
+            formatDate.hour = formatDate.hour ? formatDate.hour : 12;
+            formatDate.minutes = formatDate.minutes < 10 ? '0'+formatDate.minutes : formatDate.minutes
+            let time = formatDate.hour+':'+formatDate.minutes+ampm
+            const storeDate = formatDate.day+'/'+formattedMonth+'/'+formatDate.year;
+            data.date = storeDate;
+            data.time = time;
+            ExpensesRepository.add(data, (err, expense) => {
+                if(err) return res.json({message: 'Error ocurred in adding this expense', code: 15})
+                if(expense) {
+                    const check = company.expenses.push(expense._id)
+                    if(check) {
+                        company.save();
+                        res.json({message: 'This expense have been created successfully', code: 200});
+                    }
+                }
+            })
+        })
+    })
+} 
+
+exports.getPreferredDateExpenses = (req, res, compId, date) => {
+    CompanyRepository.getById(compId, (err, company) => {
+        if(err) return res.json({message: 'Error ocurred in getting this company', code: 10});
+        if(!company) return res.json({message: 'This company does not exists', code: 11});
+        ExpensesRepository.findById(company.expenses, (err, expenses) => {
+            if(err) return res.json({message: 'Error ocurred in getting the expenses', code: 12});
+            const p = expenses.filter(element => {
+                return element.date == date
+            })
+            if(p.length > 0) {
+                var y = [...p].reverse();
+                var amt = y.map(m => {
+                    return m.amount;
+                })
+                getSum = (total, sum) => {
+                    return total + sum;
+                }
+                var amount = amt.reduce(getSum);
+                return res.json({message: y, amount: amount, code: 200})
+            } else {
+                return res.json({message: 'There is no expenses on this day', code: 16})
+            }
+        })
+    })
+} 
+
+exports.addSales = (req, res, compId, data) => {
+    CompanyRepository.getById(compId, (err, company) => {
+        if(err) return res.json({message: 'Error ocurred in getting this company', code: 10});
+        if(!company) return res.json({message: 'This company does not exists', code: 11});
+        res.json(company);
+    })
+    // console.log('Services', data);
+    // SalesRepository.add(data, (err, sale) => {
+    //     if(err) return res.json({message: 'error ocurred while creating this sale'})
+    //     console.log(sale)
+    // })
 }

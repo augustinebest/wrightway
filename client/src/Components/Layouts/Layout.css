@@ -13,7 +13,7 @@
     box-shadow: -8px 12px 14px #eee;
     position: relative;
     padding: 20px;
-    background-color: #f5f8fa;
+    background-color: #edf1f5;
     box-shadow: 14px 8px 15px #eee;
 }
 
@@ -26,11 +26,16 @@
 .grid-1, .grid-2, .grid-3 {
     text-align: center;
     width: 90%;
-    height: auto;
+    height: 120px;
     background-color:  #fff;
     color: rgb(0,30,74);
-    box-shadow: -8px 12px 14px #eee;
     padding: 2px;
+}
+
+.expenses_box {
+    background-color: #edf1f5;
+    box-shadow: 14px 8px 15px #eee;
+    padding: 20px;
 }
 
 .company__display {
@@ -240,6 +245,16 @@
     font-weight: bolder;
 }
 
+.profile_label {
+    padding: 6px;
+    border: 1px solid #f00;
+}
+
+.profile_content {
+    padding: 6px;
+    border: 1px solid #f00;
+}
+
 /* Attendane Component */
 .attendance_base {
     border: 1px solid rgb(0,30,74);
@@ -314,4 +329,53 @@ ul {
 
 .attendance_base .present:hover {
     background-color: rgb(11, 80, 11);
+}
+
+/* Expenses Component */
+
+.expense-card {
+    width: 100%;
+    height: 300px;
+    background-color: #edf1f5;
+    margin-bottom: 20px;
+    padding: 0px 12px 12px 12px;
+}
+
+.expense-bigcard {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+
+.ex-box {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    padding: 30px;
+}
+
+.exp__button {
+    padding: 2px 8px;
+    background-color: rgb(105, 10, 10);
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    transition: 0.2s;
+}
+
+.exp__button:hover {
+    color: #fff;
+    background-color: rgb(0,30,74);
+}
+
+.span-ex {
+    font-size: 35px;
+    float: left;
+    padding-right: 5px;
+}
+
+.span-ex2 {
+    float: right;
+    font-size: 35px;
+    padding-left: 5px;
 }

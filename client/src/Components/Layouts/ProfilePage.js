@@ -61,19 +61,25 @@ class ProfilePage extends Component {
             </div>
             
             <div className='col-md-8 profile_page'>
-                <div style={{backgroundColor: '#f5f8fa'}} className='block__profile'>
-                    Full Name<br />
-                    <input className='fields' value={profile && profile.fullName}/>
-                    Address<br />
-                    <input className='fields' value={profile && profile.address}/>
-                    Phone Number<br />
-                    <input className='fields' value={profile && profile.phoneNumber}/>
-                    ID No.<br />
-                    <input className='fields' value={profile && profile.idNo}/>
-                    Email<br />
-                    <input className='fields' value={profile && profile.email}/>
-                    Nationality<br />
-                    <input className='fields' value={profile && profile.nationality}/>
+                <div style={{backgroundColor: '#f5f8fa', border: '1px solid #f00'}} className='block__profile'>
+                    <div className='row'>
+                        <div className='col-md-6'>
+                            
+                        </div>
+                        <div className='col-md-6'>
+                            
+                        </div>
+                    </div>
+                {/* <center>
+                    <div>
+                        <div><span className='profile_label'>Full Name</span><span className='profile_content'>{profile && profile.fullName}</span></div>
+                        <div><span className='profile_label'>Address</span><span className='profile_content'>{profile && profile.address}</span></div>
+                        <div><span className='profile_label'>Phone Number</span><span className='profile_content'>{profile && profile.phoneNumber}</span></div>
+                        <div><span className='profile_label'>ID No.</span><span className='profile_content'>{profile && profile.idNo}</span></div>
+                        <div><span className='profile_label'>Email</span><span className='profile_content'>{profile && profile.email}</span></div>
+                        <div><span className='profile_label'>Nationality</span ><span className='profile_content'>{profile && profile.nationality}</span></div>
+                    </div>
+                </center> */}
                 </div>      
             </div>
           </div>

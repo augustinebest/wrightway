@@ -3,7 +3,6 @@ import Bodywrapper from './BodyWrapper';
 import axios from 'axios';
 import { Url } from '../Factories';
 import { Link } from 'react-router-dom';
-import Loader from '../loader/Loader';
 
 class AllWorkers extends Component {
     constructor(props) {

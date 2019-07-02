@@ -323,7 +323,6 @@ class MarkAttendance extends Component {
                                       <tbody>
                                         {
                                           admins.map((admin, index) => {
-                                            const id = admin.idNo
                                             return (
                                               <tr key={index}>
                                                       <th scope="row">{index+1}</th>

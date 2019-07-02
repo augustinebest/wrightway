@@ -17,5 +17,8 @@ router.get('/:id/worker', auth.checkAuth, adminController.getAworker);
 router.post('/ascribeSalary', auth.checkAuth, adminController.ascribeSalary);
 router.post('/mark-attendance', auth.checkAuth, adminController.markAttendance);
 router.post('/:id/worker-attendance-in-a-month', auth.checkAuth, adminController.findAWorkerAttendanceInAMonth);
+router.post('/:id/make-expenses', auth.checkAuth, adminController.makeExpenses);
+router.post('/:id/getByDay', auth.checkAuth, adminController.getPreferredDateExpenses);
+router.post('/:id/addSales', auth.checkAuth, adminController.addSales);
 
-module.exports = router; 
+module.exports = router;

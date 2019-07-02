@@ -7,6 +7,7 @@ import MarkAttendance from './Components/Layouts/MarkAttendance';
 import Applications from './Components/Layouts/Applications';
 import Materials from './Components/Layouts/Materials';
 import AllWorkers from './Components/Layouts/AllWorkers';
+import Expenses from './Components/Layouts/Expenses/ExpenseLayout';
 import Costs from './Components/Layouts/Costs';
 import ProfilePage from './Components/Layouts/ProfilePage';
 import SetSalary from './Components/Layouts/SubLayout/SetSalary';
@@ -24,6 +25,7 @@ const Router = () => {
                 <Route path='/dashboard/applications' exact strict component={Applications} />
                 <Route path='/dashboard/materials' exact strict component={Materials} />
                 <Route path='/dashboard/all-workers' exact strict component={AllWorkers} />
+                <Route path='/dashboard/expenses' exact strict component={Expenses} />
                 <Route path='/dashboard/costs' exact strict component={Costs} />
                 <Route path='/dashboard/:id/profile' exact strict component={ProfilePage} />
                 <Route path='/dashboard/:id/profile/set-salary' exact strict component={SetSalary} />

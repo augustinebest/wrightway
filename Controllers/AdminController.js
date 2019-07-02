@@ -216,3 +216,59 @@ exports.findAWorkerAttendanceInAMonth = (req, res) => {
         return res.json({message: error})
     }
 }
+
+exports.makeExpenses = (req, res) => {
+    try {
+        const request = req.body;
+        const compId = req.params.id;
+        const data = {
+            reason: request.reason,
+            amount: request.amount,
+            person: req.userData.idNo,
+            date: new Date,
+            time: null
+        }
+        if(request.reason == '' || request.reason == null || request.amount == '' || request.amount == null ) {
+            return res.json({message: 'Empty fields', code: 10})
+        } else {
+            return services.makeExpenses(req, res, data, compId);
+        }
+    } catch(error) {
+        return res.json({message: error})
+    }
+}
+
+exports.getPreferredDateExpenses = (req, res) => {
+    try {
+        const compId = req.params.id;
+        const date = req.body.date;
+        if(date == '' || date == null) {
+            return res.json({message: 'Empty fields', code: 10});
+        } else {
+            return services.getPreferredDateExpenses(req, res, compId, date);
+        }
+    } catch(error) {
+        return res.json({message: error});
+    }
+}
+
+exports.addSales = async (req, res) => {
+    try {
+        const compId = req.params.id;
+        const data = {
+            person: null,
+            info: req.body.info,
+            date: null,
+            time: null
+        }
+        let k = await data;
+        if(k.info == '' || k.info == null) {
+            res.json({message: 'Empty fields'})
+        } else {
+            // console.log('continue')
+            return services.addSales(req, res, compId, data);
+        }
+    } catch (error) {
+        return res.json({message: error})
+    }
+}

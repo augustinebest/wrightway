@@ -13,6 +13,7 @@ class Dashboard extends Component {
       companies: null
     }
   }
+
   componentDidMount() {
     const compId = JSON.parse(sessionStorage.getItem('company'));
     var token = JSON.parse(sessionStorage.getItem('hytjz'));
@@ -48,6 +49,7 @@ class Dashboard extends Component {
     axios.get(`${Url}/company/get-a-comp/${data}`, {
       headers: {"Authorization": `Bearer ${token}`}
     }).then(res => {
+      console.log(res);
       this.setState({
         dashboard: res.data.message
       })
@@ -72,7 +74,7 @@ class Dashboard extends Component {
                     })
                   }
                 </ul>
-                <span className="font-10">
+                <div style={{height: 'auto'}}>
                 <div className='row'>
                 <center>
                     <div className='col-md-3 box1'>
@@ -120,22 +122,84 @@ class Dashboard extends Component {
                     <div className='col-md-3 box3'>
                         <div className='grid-3'>
                         {
-                              dashboard &&
                                <div>
-                                  <h4>Absent</h4>
-                                  <h2>No time</h2>
-                                  <h5>debit - {dashboard.absentDebit}</h5>
+                                  <h4>water set(11)</h4>
+                                  <h2>Price: &#8358;1000</h2>
                               </div>
                             }
                         </div>
                     </div>
                 </center>
                 </div>
-                </span>
-                <div>
-                  
+                
+                <div className='row'>
+                <center>
+                    <div className='col-md-3 box1'>
+                        <div className='grid-1'>
+                            {
+                               <div>
+                                  <h4>Totals Drivers</h4>
+                                  <h2>13</h2>
+                              </div>
+                            }
+                        </div>
+                    </div>
+                </center>
+                <center>
+                    <div className='col-md-3 box2'>
+                        <div className='grid-2'>
+                        {
+                               <div>
+                                  <h4>Total Factory Workers</h4>
+                                  <h2>23</h2>
+                              </div>
+                            }
+                        </div>      
+                    </div>
+                </center>
+                <center>
+                    <div className='col-md-3 box3'>
+                        <div className='grid-3'>
+                        {
+                               <div>
+                                  <h4>Total Admins</h4>
+                                  <h2>7</h2>
+                              </div>
+                            }
+                        </div>
+                    </div>
+                </center>
+                <center>
+                    <div className='col-md-3 box3'>
+                        <div className='grid-3'>
+                        {
+                               <div>
+                                  <h4>Today's Expenses</h4>
+                                  <h2>&#8358;0</h2>
+                              </div>
+                            }
+                        </div>
+                    </div>
+                </center>
+                </div><br />
+                  Recent Expenses
+                  <div className="table-responsive">
+                    <table className="table table-striped">
+                      <thead>
+                          <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Amount</th>
+                              <th scope="col">Person</th>
+                              <th scope="col">Reason</th>
+                              <th scope="col">Date</th>
+                          </tr>
+                      </thead>
+                    </table>
+                  </div>
                 </div>
-            </div>
+                </div>
+
+            
         </Fragment>
       );
   }

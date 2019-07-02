@@ -42,6 +42,12 @@ const CompanySchema = mongoose.Schema({
     admins: [{
         type:  mongoose.Schema.Types.ObjectId, ref: 'Admin'
     }],
+    Drivers: [{
+        type: mongoose.Schema.Types.ObjectId, ref: 'FactoryWorker'
+    }],
+    expenses: [{
+        type:  mongoose.Schema.Types.ObjectId, ref: 'Expense'
+    }]
 })
 
 module.exports = mongoose.model('Company', CompanySchema);

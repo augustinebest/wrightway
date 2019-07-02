@@ -193,7 +193,7 @@ class EmpApplications extends Component {
                     <div className="col-md-4 box_div">
                         <div className="block__form">
                             <center><div style={{maxWidth: '270px', height: '250px', border: '2px solid rgb(5, 58, 138);', boxShadow: '-1px 4px 10px rgb(134, 119, 119'}}>
-                              <center><div ><img id='img' style={{width: '180px', height: '205px', margin: '5px 0px'}} src={A} /></div></center>
+                              <center><div ><img id='img' style={{width: '180px', height: '205px', margin: '5px 0px'}} src={A} alt='' /></div></center>
                               <div className="button_upload1" onClick={this.trigger}>Upload Image</div>
                             </div></center>
                             <input style={{display: 'none'}} ref='fileRef'

@@ -15,7 +15,7 @@ class Sidedrawer extends Component {
                         <NavLink to='/dashboard/attendance'><li className='sub-drop'><i className='fa fa-book'></i> Mark Attendance</li></NavLink>
                         <NavLink to='/dashboard/materials'><li className='sub-drop'><i className='fa fa-sitemap'></i> Prod. Raw Materials</li></NavLink>
                         <NavLink to='/dashboard/all-workers'><li className='sub-drop'><i className='fa fa-group'></i> All Workers</li></NavLink>
-                        <NavLink to='/dashboard/costs'><li className='sub-drop'><i className='fa fa-mail-reply'></i> Expenses</li></NavLink>
+                        <NavLink to='/dashboard/expenses'><li className='sub-drop'><i className='fa fa-mail-reply'></i> Expenses</li></NavLink>
                         <NavLink to='/dashboard/costs'><li className='sub-drop'><i className='fa fa-glass'></i> Stock</li></NavLink>
                         <NavLink to='/dashboard/costs'><li className='sub-drop'><i className='fa fa-database'></i> Today's Record</li></NavLink>
                 </ul>

@@ -53,7 +53,7 @@ class SetSalary extends Component {
     }
 
     render() {
-        const { newSalary } = this.state;
+        // const { newSalary } = this.state;
         return (
             <Fragment>
                 <div className='emp__base1'>

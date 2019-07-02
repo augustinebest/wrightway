@@ -26,10 +26,10 @@ const superAdminRoutes = require('./routes/superAdmin');
 
 //Connecting to the local database
 mongoose.Promise = global.Promise;
-// mongoose.connect('mongodb://localhost:27017/Wrightway', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost:27017/Wrightway', { useNewUrlParser: true }); 
 
 // Connection to mlab
-mongoose.connect('mongodb://wrightway:wrightway54@ds035633.mlab.com:35633/wrightway', { useNewUrlParser: true })
+// mongoose.connect('mongodb://wrightway:wrightway54@ds035633.mlab.com:35633/wrightway', { useNewUrlParser: true })
 
 //Middleware
 app.use(morgan('dev'));
@@ -45,8 +45,8 @@ app.use(bodyparser.json());
 //         res.sendFile(path.join(__dirname, '/client/build/index.html'));
 //     })
 // }
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.use(express.static(__dirname + '/client/public'));
+// app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(__dirname + '/client/public'));
 
 
 app.get('/', function(req, res) {
